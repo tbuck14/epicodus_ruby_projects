@@ -1,5 +1,10 @@
 require 'fileutils'
 
+app_header = "require('sinatra')
+require('sinatra/reloader')
+require('./lib/**/*.rb')
+require('pry')
+also_reload('lib/**/*.rb')"
 
 def mkdir(name, directory)
     FileUtils.cd(directory) do
@@ -23,11 +28,14 @@ home_dir = "/Users/trevorbuck/repos/epicodus_ruby"
 proj_dir = "/Users/trevorbuck/repos/epicodus_ruby/#{proj_name}"
 lib = "#{proj_dir}/lib"
 spec = "#{proj_dir}/spec"
+views = "#{proj_dir}/views"
 
 mkdir(proj_dir, home_dir)
 mkdir(lib,proj_dir)
 mkdir(spec,proj_dir)
-mkfile("Gemfile", proj_dir, "source 'https://rubygems.org'\n\n\ngem 'rspec'\ngem 'pry'")
+mkdir(views,proj_dir)
+mkfile("app.rb",proj_dir, app_header)
+mkfile("Gemfile", proj_dir, "source 'https://rubygems.org'\n\ngem 'sinatra'\ngem 'rspec'\ngem 'pry'\ngem 'sinatra-contrib'")
 response = ""
 while true
     puts "please enter names of the classes you plan to use in this project"
@@ -40,6 +48,6 @@ while true
         break
     else
         mkfile(rbfile,lib,"class #{classname}\nend")
-        mkfile(specfile, spec, "require '#{classname.downcase}'\nrequire 'rspec'\n\ndescribe('#{classname}') do\n  it ('') do\n  end\nend")
+        mkfile(specfile, spec, "require '#{classname.downcase}'\nrequire 'rspec'\n\ndescribe('##{classname}') do\n  it ('') do\n  end\nend")
     end
 end

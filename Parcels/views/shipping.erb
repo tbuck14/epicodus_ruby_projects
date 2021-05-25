@@ -1,0 +1,140 @@
+
+<head>
+    <meta charset = "utf-8">
+    <style>
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center, dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend, table, caption,
+        tbody, tfoot, thead, tr, th, td, article, aside,
+        canvas, details, embed, figure, figcaption, footer,
+        header, hgroup, menu, nav, output, ruby, section,
+        summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+        display: block;
+        }
+        body {
+        font-family: Helvetica, Arial, Helvetica, sans-serif;  
+        line-height: 1;
+        }
+        blockquote, q {
+        quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+        content: '';
+        content: none;
+        }
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        }
+        strong, b {
+        font-weight: bold;
+        }
+        em, i {
+        font-style: italic;
+        }
+        a img {
+        border: none;
+        }
+        /* END RESET*/
+
+
+        .header {
+            background-color: black;
+            width: 100%;
+            height: 15vh; 
+            position: relative;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        .logo {
+            color:lightblue;
+            position: absolute;
+            margin: 5vh;
+            padding: 10px;
+            border: 1px solid lightblue;
+            display: inline-block;
+            font-weight: bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        }
+        .form-box {
+            background-color: lightblue; 
+            height: 85vh;
+            width: 100%;
+            position: relative;
+            padding: 2em;
+        }
+        .input-boxes {
+            text-align: center;
+            background-color: lightgrey;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center; 
+            margin: 0 30% 0; 
+        }
+        .button {
+            background-color: grey;
+            color: lightblue;
+            width: 15vw; 
+            height: 5vh; 
+            margin-top:2em;
+            margin-bottom:2em;
+        }
+        input {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            width: 20vw;
+        }
+        label{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin: 1em 0 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header class = "header">
+        <h3 class = "logo">Shipping Calculator</h3>
+    </header>
+    <div class = "form-box">
+        <form action="/cost" method="post">
+            <div class = "input-boxes">
+
+                <label>Package length: </label>
+                <input type="text" name="length">
+
+                <label>Package width: </label>
+                <input type="text" name="width">
+
+                <label>Package height: </label>
+                <input type="text" name="height">
+
+                <label>Package weight: </label>
+                <input type="text" name="weight">
+
+                <label>Shipping method: </label>
+                <label>enter either 'standard', 'priority', or 'overnight'</label>
+                <input type="text" name="shipping_method">
+
+                <button type="submit" class="button">Calculate</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
