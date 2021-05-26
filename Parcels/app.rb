@@ -8,6 +8,10 @@ also_reload('lib/**/*.rb')
 get('/') do
     erb(:shipping)
 end
+get('/invalid') do
+    @error_message = "error: Invalid Shipping Method!"
+    erb(:shipping)
+end
 post('/cost') do 
     input = params["shipping_method"].downcase
     if input == 'standard' || input == 'priority' || input == 'overnight'
@@ -16,6 +20,6 @@ post('/cost') do
         @shipping_method = params["shipping_method"]
         erb(:cost)
     else   
-        redirect('/')
+        redirect('/invalid')
     end
 end

@@ -97,16 +97,6 @@ html, body, div, span, applet, object, iframe,
         margin-top:2em;
         margin-bottom:2em;
     }
-    a {
-        margin: 2em;
-        display: block;
-        background-color: grey;
-        text-align: center;
-        font-size: 1em;
-        color: lightblue;
-        padding: 1em;
-        text-decoration: none;
-    }
     h2 {
         margin: 2em;
         display: block;
