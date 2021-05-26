@@ -3,6 +3,7 @@ require('sinatra/reloader')
 require('./lib/parcel')
 require('pry')
 also_reload('lib/**/*.rb')
+also_reload('public/looks.css')
 
 
 get('/') do
