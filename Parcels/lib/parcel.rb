@@ -1,4 +1,5 @@
 class Parcel
+
     attr_reader :length, :width, :height, :weight, :id
     @@parcels = {}
     @@total_rows = 0 
@@ -61,4 +62,5 @@ class Parcel
         cost += ((vol*0.03)+ (w*0.35)) if ship_speed == "overnight"
         cost
     end
+    
 end

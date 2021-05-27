@@ -1,7 +1,7 @@
 
 <head>
     <meta charset = "utf-8">
-    <link rel="stylesheet" type="text/css" href="/looks.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
     <header class = "header">
@@ -12,21 +12,21 @@
             <div class = "input-boxes">
 
                 <label>Package length: </label>
-                <input type="text" name="length">
+                <input class="input" type="text" name="length">
 
                 <label>Package width: </label>
-                <input type="text" name="width">
+                <input class="input" type="text" name="width">
 
                 <label>Package height: </label>
-                <input type="text" name="height">
+                <input class="input" type="text" name="height">
 
                 <label>Package weight: </label>
-                <input type="text" name="weight">
+                <input class="input" type="text" name="weight">
                 
                 <label>Shipping method: </label>
                 <h4 style = "color: red;"><%=@error_message%></h4>
                 <label>enter either 'standard', 'priority', or 'overnight'</label>
-                <input type="text" name="shipping_method">
+                <input class="input" type="text" name="shipping_method">
 
                 <button type="submit" class="button">Calculate</button>
             </div>

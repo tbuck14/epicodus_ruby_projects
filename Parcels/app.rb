@@ -24,3 +24,4 @@ post('/cost') do
         redirect('/invalid')
     end
 end
+

@@ -80,7 +80,7 @@ html, body, div, span, applet, object, iframe,
         align-items: center; 
         margin: 0 30% 0; 
     }
-    input {
+    .input {
         font-family:Verdana, Geneva, Tahoma, sans-serif;
         width: 20vw;
     }
@@ -103,4 +103,7 @@ html, body, div, span, applet, object, iframe,
     }
     h3 {
         font-size: 20px;
+    }
+    ul {
+        text-align: left;
     }
