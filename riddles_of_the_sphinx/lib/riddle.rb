@@ -9,7 +9,7 @@ class Riddle
         @answer = answer.downcase
         @id = id || @@total_rows += 1
     end
-
+    
     def save()
         @@riddles[self.id] = Riddle.new(self.name, self.riddle, self.answer, self.id)
     end
@@ -30,5 +30,23 @@ class Riddle
         @@riddles[id]
     end
 
+    def ==(riddle_to_compare)
+        self.riddle() == riddle_to_compare.riddle() && self.name == riddle_to_compare.name && self.answer == riddle_to_compare.answer
+    end
+
+    def self.clear
+        @@riddles = {}
+        @@total_rows = 0 
+    end
+
+    def update(name, riddle, answer)
+        @name = name
+        @riddle = riddle
+        @answer = answer
+    end
+
+    def delete()
+        @@riddles.delete(self.id)
+    end
 
 end

@@ -1,4 +1,4 @@
-require 'riddle'
+require 'riddle_game'
 require 'rspec'
 
 describe('#Riddle') do
